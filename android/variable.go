@@ -110,7 +110,7 @@ type variableProperties struct {
 		}
 
 		// include AOSP variables
-		*android.Product_variables
+		AOSP android.Product_variables
 	} `android:"arch_variant"`
 }
 
@@ -194,7 +194,7 @@ type productVariables struct {
 	TargetUsesQCOMBsp *bool `json:",omitempty"`
 
 	// include AOSP variables
-	*android.ProductVariables
+	AOSP android.ProductVariables
 }
 
 func boolPtr(v bool) *bool {
