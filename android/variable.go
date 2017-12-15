@@ -20,6 +20,8 @@ import (
 	"runtime"
 	"strings"
 
+	"aosp/soong/android"
+
 	"github.com/google/blueprint/proptools"
 )
 
@@ -106,6 +108,9 @@ type variableProperties struct {
 		Pdk struct {
 			Enabled *bool
 		}
+
+		// include AOSP variables
+		*android.Product_variables
 	} `android:"arch_variant"`
 }
 
@@ -187,6 +192,9 @@ type productVariables struct {
 
 	BoardUsesQCOMHardware *bool `json:",omitempty"`
 	TargetUsesQCOMBsp *bool `json:",omitempty"`
+
+	// include AOSP variables
+	*android.ProductVariables
 }
 
 func boolPtr(v bool) *bool {
